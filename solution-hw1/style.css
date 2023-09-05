@@ -1,7 +1,7 @@
 *{
     padding: 0px;
     margin:0px auto;
-    /* text-align:center; */
+     /* automatically center all text */
 }
 body{
     width:1200px;
@@ -16,8 +16,6 @@ a{
 {
     font-size: 20px; 
     padding: 10px;
-
-
 }
 .pictures
 {
@@ -82,11 +80,13 @@ h1
 {
     font-size: 20px;
     font-weight: 400;
+    /* different font sizes for text */
 }
 .textspace
 {
     width: 250px;
     margin-top: 10px;
+    /* adjusted margins to replicate mockups */
    
 }
 .textspace2
@@ -114,6 +114,7 @@ h1
 .text:hover
 {
     font-weight: bold;
+    /* to bold hovered text in product gallery page */
 }
 hr 
 {
@@ -121,4 +122,5 @@ hr
   margin-left: auto;
   margin-right: auto;
   border-style: solid;
+  /* I got this styling source from w3 */
 }
