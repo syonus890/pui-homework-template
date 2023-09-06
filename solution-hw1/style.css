@@ -3,64 +3,53 @@
     margin:0px auto;
      /* automatically center all text */
 }
-body{
+body {
     width:1200px;
 }
 a{
     text-decoration:none;
 }
-.centertext{
+.centertext {
     text-align:center;
 }
-.navigation-text
-{
+.navigation-text {
     font-size: 20px; 
     padding: 10px;
 }
-.pictures
-{
+.pictures {
     border: 4px solid black;
     margin: 5px;
 }
-.productselect
-{
+.productselect {
     background-color: yellow;
 }
-.logo
-{
+.logo {
    text-align: left;
 }
-.your-liking
-{
+.your-liking {
     text-align: left;
 }
-.originalcr
-{
+.originalcr {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.productwrapper:hover
-{
+.productwrapper:hover {
     background-color: yellow;
     
 }
-.productwrapper
-{
+.productwrapper {
     width: 418px;
     margin-top: 30px;
 }
-.productspace
-{
+.productspace {
     margin-bottom: 40px;
 }
-.dropdown
-{
+.dropdown {
     width: 225px;
     text-align: center;
     margin-bottom: 20px;
 }
-.button1
-{
+.button1 {
     margin-left: 40px;
     background-color: yellow;
     font-size: 15 ;
@@ -68,57 +57,48 @@ a{
     border: 2px solid black;
     padding: 10px 15px 10px 15px;
 }
-.price
-{
+.price {
     display: inline-block;
     text-align: left;
     font-size: 14px;
     font-weight: 600;
     margin: 40px 0px 30px 0px
 }
-h1
-{
+h1 {
     font-size: 20px;
     font-weight: 400;
     /* different font sizes for text */
 }
-.textspace
-{
+.textspace {
     width: 250px;
     margin-top: 10px;
     /* adjusted margins to replicate mockups */
    
 }
-.textspace2
-{
+.textspace2 {
     width: 250px;
     margin-top: 10px;
     margin-bottom: 10px;
    
 }
-.h2
-{
+.h2 {
     font-size: 15px;
     font-weight: 200;
 }
-.h3
-{
+.h3 {
     font-size: 25px;
     font-weight: 300;
 }
-.h4
-{
+.h4 {
     font-size: 12px;
     font-weight: 200;
 }
-.text:hover
-{
+.text:hover {
     font-weight: bold;
     /* to bold hovered text in product gallery page */
 }
-hr 
-{
-  width: 95%;
+hr {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   border-style: solid;
