@@ -7,10 +7,10 @@ body {
     width:1200px;
 }
 a{
-    text-decoration:none;
+    text-decoration: none;
 }
 .centertext {
-    text-align:center;
+    text-align: center;
 }
 .navigation-text {
     font-size: 20px; 
@@ -84,13 +84,15 @@ h1 {
 .h2 {
     font-size: 15px;
     font-weight: 200;
-    position:absolute; 
-    top: 0px;
-    right: 0px;
+    position: absolute; 
+    display: flex; 
 }
 .h3 {
     font-size: 25px;
     font-weight: 300;
+    margin: right;
+    margin-top: auto;
+
 }
 .h4 {
     font-size: 12px;
@@ -101,8 +103,7 @@ h1 {
     /* to bold hovered text in product gallery page */
 }
 hr {
-  width: 100%;
-  margin-left: auto;
+  width: 80%;
   margin-right: auto;
   border-style: solid;
   /* I got this styling source from w3 */
