@@ -1,16 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
 *{
     padding: 0px;
-    margin:0px auto;
-     /* automatically center all text */
+    /* margin:0px auto; */
+    /* automatically center all text */
 }
 body {
     width:1200px;
 }
-a{
+a {
     text-decoration: none;
 }
 .centertext {
-    text-align: center;
+    font-size: 30px;
+    margin-right: 240px;
+    color: black;
+
 }
 .navigation-text {
     font-size: 20px; 
@@ -19,32 +24,39 @@ a{
 .pictures {
     border: 4px solid black;
     margin: 5px;
+    font-size: 20px;
 }
 .productselect {
     background-color: yellow;
 }
-.logo {
-   text-align: left;
-}
 .your-liking {
     text-align: left;
+    width: 255px;
+    font-size: 20px;
 }
 .originalcr {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-left: 30px;
 }
 .productwrapper:hover {
     background-color: yellow;
     
 }
 .productwrapper {
-    width: 418px;
-    margin-top: 30px;
+    /*width: 418px;*/
+    /*margin-top: 30px; */
 }
 .productspace {
     margin-bottom: 40px;
 }
+.dropdown-button {
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    width: 150px;
+    font-size: 20px;
+}
 .dropdown {
+    margin-left: 10px;
     width: 225px;
     text-align: center;
     margin-bottom: 20px;
@@ -59,8 +71,7 @@ a{
 }
 .price {
     display: inline-block;
-    text-align: left;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     margin: 40px 0px 30px 0px
 }
@@ -78,33 +89,84 @@ h1 {
 .textspace2 {
     width: 250px;
     margin-top: 10px;
-    margin-bottom: 10px;
-   
+    margin-bottom: 10px; 
 }
 .h2 {
     font-size: 15px;
     font-weight: 200;
     position: absolute; 
-    display: flex; 
 }
 .h3 {
     font-size: 25px;
     font-weight: 300;
-    margin: right;
-    margin-top: auto;
 
 }
 .h4 {
-    font-size: 12px;
-    font-weight: 200;
+    margin-left: 20px;
 }
 .text:hover {
     font-weight: bold;
+    color: black;
+    font-size: 20px;
+    
     /* to bold hovered text in product gallery page */
 }
+.text {
+    color:black;
+    font-size: 20px;
+    
+}
 hr {
-  width: 80%;
-  margin-right: auto;
-  border-style: solid;
+  border-bottom: 3px solid black;
+  margin-left: 20px;
+  margin-top: 40px;
   /* I got this styling source from w3 */
+}
+.navigationBar { 
+    display: flex;
+}
+
+.navLinks{
+    display: flex;
+    justify-content: right;
+    margin: 20px 20px;
+}
+
+.navRight
+{
+    flex-grow: 1;
+
+}
+.navText {
+    font-size: 20px;
+    margin-top: 90px;
+    color: black;
+ 
+}
+.navLinks2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.navLinks3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.productflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productText {
+    margin-left: 40px;
+}
+.cartFlex {
+    display: flex; 
+    justify-content: flex-end;
+}
+p {
+    font-family: 'PT Sans', Arial, Helvetica, sans-serif
 }
