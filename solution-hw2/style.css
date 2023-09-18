@@ -2,8 +2,7 @@
 
 *{
     padding: 0px;
-    /* margin:0px auto; */
-    /* automatically center all text */
+    margin: 5px;
 }
 body {
     width:1200px;
@@ -15,6 +14,8 @@ a {
     font-size: 30px;
     margin-right: 240px;
     color: black;
+    margin-top: 70px;
+    margin-bottom: 50px;
 
 }
 .navigation-text {
@@ -33,6 +34,7 @@ a {
     text-align: left;
     width: 255px;
     font-size: 20px;
+    margin-bottom: 60px;
 }
 .originalcr {
     margin-left: 30px;
@@ -40,10 +42,6 @@ a {
 .productwrapper:hover {
     background-color: yellow;
     
-}
-.productwrapper {
-    /*width: 418px;*/
-    /*margin-top: 30px; */
 }
 .productspace {
     margin-bottom: 40px;
@@ -62,12 +60,12 @@ a {
     margin-bottom: 20px;
 }
 .button1 {
-    margin-left: 40px;
+    margin-left: 100px;
     background-color: yellow;
-    font-size: 15 ;
+    font-size: 15px;
     font-weight: 600 ;
     border: 2px solid black;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px 10px 10px;
     float: right;
 }
 .price {
@@ -119,8 +117,8 @@ h1 {
 }
 hr {
   border-bottom: 3px solid black;
-  margin-left: 20px;
-  margin-top: 40px;
+  margin-left: 30px;
+  margin-top: 30px;
   /* I got this styling source from w3 */
 }
 .navigationBar { 
@@ -184,9 +182,6 @@ p {
     display: flex;
     margin-right: 0px;
 }
-/* .widthFlex {
-    width: 350px;
-} */
 .cartLine{
     width: 800px;
     margin-left: 420px;
@@ -205,13 +200,16 @@ p {
     margin-right: 350px;
 }
 .productPrice{
-    margin-left: 80px;
+    margin-left: 60px;
 }
 .productButton {
     margin-left: 40px;
     background-color: yellow;
-    font-size: 15 ;
+    font-size: 15px;
     font-weight: 600 ;
     border: 2px solid black;
-    padding: 10px 15px 10px 15px; 
+    padding: 10px 15px 10px 10px; 
+}
+.addSpace {
+    margin-top: 60px;
 }
