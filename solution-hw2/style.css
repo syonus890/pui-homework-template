@@ -188,6 +188,7 @@ p {
 }
 .productDetail{
     width:350px;
+    justify-content: space-evenly;
 }
 .cartImage{
     padding-right: 60px;
