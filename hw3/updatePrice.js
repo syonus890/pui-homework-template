@@ -1,100 +1,72 @@
-class cinnaRollPrice {
-    // constructor(price, name) {
-    //     this.name = ""; 
-    //     this.price = 0;
-    
+let glazingName = ["Keep original", "Sugar milk", "Vanilla milk", "Double chocolate"];
+let glazeValue = [0.0, 0.0, 0.5, 1.5];
+let packSizeValue = [1, 3, 5, 10];
+let packSizePrice = ["1", "3", "6", "12"];
+const basePrice = 2.49;
+let glaze = 0;
+let packSize = 1;
+let updated_price = 0;
 
-    constructor (packsize, product, glazing) {
-        this.packsize = packsize; 
-        this.product = product;
-        this.glazing = glazing;
-    }
+const glazingPrice = {
+    "Keep original": 0,
+    "Sugar milk": 0,
+    "Vanilla milk": 0.5,
+    "Double chocolate": 1.5
+
+
+
 }
 
-// const glazingPrices = {
-//     "Original": 0.00,
-//     "Sugar milk": 0.00,
-//     "Vanilla milk": 0.50,
-//     "Double chocolate": 1.50,
-// }
+const packConnectValue = {
+    "1":1,
+    "3": 3,
+    "6": 5,
+    "12":10
+}
 
-const originalGlazing = {
-    glazeName: "Keep original", 
-    glazeValue: 0.00
+const listGlazeOpt = document.querySelector("#glazingOptions");
+const packSizeOpt = document.querySelector("#packSizeOptions");
 
-};
-const sugarGlazing = {
-    glazeName: "Sugar milk", 
-    glazeValue: 0.00
 
-};
-const vanillaGlazing = {
-    glazeName: "Vanilla milk", 
-    glazeValue: 0.50
+function calculate_Price(element){
+    let glazingValue = document.getElementById("glazingOptions").value;
+    console.log(glazingValue);
+    let packingValue = document.getElementById("packSizeOptions").value;
+    console.log(packingValue);
+    let glazePrice = glazingPrice[glazingValue];
+    let packPrice = packConnectValue[packingValue];
+    updated_price = (basePrice+glazePrice)*packPrice;
+    updated_price = updated_price.toFixed(2);
+    document.getElementById("currentPrice").innerHTML = "$" + updated_price;
+    return updated_price;
 
-};
-const chocolatelGlazing = {
-    glazeName: "Double chocolate", 
-    glazeValue: 1.50
+}
 
-};
+function computePacksizePrice(){
+    packSize = parseInt(this.value);
+    console.log(packSize);
+    display_price(calculate_Price());
+}
 
-const listGlaze = [originalGlazing, sugarGlazing, vanillaGlazing, chocolatelGlazing];
-
-const listGlazeOpt = document.querySelector("#glazingOptions")
-
-for (var j = 0; j<listGlaze.length; j++){
-    const glazeOption = document.createElement('option')
-    glazeOption.innerText = listGlaze[j].glazeName;
-    glazeOption.glazeValue = j;
+for (var j = 0; j<glazingName.length; j++){
+    const glazeOption = document.createElement('option');
+    glazeOption.innerText = glazingName[j];
+    glazeOption.value = glazingName[j];
 
     listGlazeOpt.appendChild(glazeOption);
 }
 
-const packSize1 = {
-    name: "1",
-    value: 1
-}
-const packSize3 = {
-    name: "3",
-    value: 3
-}
-const packSize6 = {
-    name: "6",
-    value: 5
-}
-const packSize12 = {
-    name: "12",
-    value: 10
-}
-
-const listPack = [packSize1, packSize3, packSize6, packSize12];
-
-const packSizeOpt = document.querySelector("#packSizeOptions")
-
-for (var j = 0; j<listPack.length; j++){
-    const packOption = document.createElement('option')
-    packOption.innerText = listPack[j].name;
-    packOption.value = j;
+for (var j = 0; j<packSizePrice.length; j++){
+    const packOption = document.createElement('option');
+    packOption.innerText = packSizePrice[j];
+    packOption.value = packSizePrice[j];
 
     packSizeOpt.appendChild(packOption);
 }
-// glazedOptions.addEventListener(onchange,computePrice);
-packSizeOptions.addEventListener(onchange, computePrice);
-
-function computePrice() {
-    const glazingSelect = document.getElementById("glazingOptions");
-    const packSizeSelect = document.getElementById("packSizeOptions");
 
 
-    const selectedGlazing = listGlaze.value;
-    //const selectedPackSize = parseInt(packSizeSelect.value);
 
-    const basePrice = 2.49;
 
-    const glazingPrice = glazingPrices[selectedGlazing];
-    const packSizePrice = packSizePrices[selectedPackSize];
-    const updatedPrice = (basePrice + glazingPrice) * packSizePrice;
-}
+
 
 

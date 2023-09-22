@@ -45,11 +45,8 @@
       <!--add dropdown menu for user to select glaze-->
       <div class="">
         <p>Glazing:</p>
-        <select name="Glazing" id="glazingOptions" class="dropdown-button">
-        <!-- <option value=0>Original</option>
-        <option value=0>Sugar milk</option>
-        <option value=0.50>Vanilla milk</option>
-        <option value=1.50>Double chocolate</option> -->
+        <select name="Glazing" id="glazingOptions" class="dropdown-button" onchange="calculate_Price(this)">
+      
         </select>
       </div>
   
@@ -57,11 +54,9 @@
       <!--add dropdown menu for user to pack size-->
       <div>
         <p>Pack size:</p>
-        <select name="Packsize" id="packSizeOptions" class="dropdown-button">
-        <!-- <option value="1">1</option>
-        <option value="3">3</option>
-        <option value="9">9</option>
-        <option value="12">12</option> -->
+        <select name="Packsize" id="packSizeOptions" class="dropdown-button" 
+        onchange="calculate_Price(this)">
+
         </select>
       </div>
 
