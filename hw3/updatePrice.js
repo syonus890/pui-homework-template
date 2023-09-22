@@ -13,8 +13,6 @@ const glazingPrice = {
     "Vanilla milk": 0.5,
     "Double chocolate": 1.5
 
-
-
 }
 
 const packConnectValue = {
@@ -28,21 +26,21 @@ const listGlazeOpt = document.querySelector("#glazingOptions");
 const packSizeOpt = document.querySelector("#packSizeOptions");
 
 
-function calculate_Price(element){
+function calculate_Price(element) {
     let glazingValue = document.getElementById("glazingOptions").value;
     console.log(glazingValue);
     let packingValue = document.getElementById("packSizeOptions").value;
     console.log(packingValue);
     let glazePrice = glazingPrice[glazingValue];
     let packPrice = packConnectValue[packingValue];
-    updated_price = (basePrice+glazePrice)*packPrice;
+    updated_price = (basePrice + glazePrice)*packPrice;
     updated_price = updated_price.toFixed(2);
     document.getElementById("currentPrice").innerHTML = "$" + updated_price;
     return updated_price;
 
 }
 
-function computePacksizePrice(){
+function computePacksizePrice() {
     packSize = parseInt(this.value);
     console.log(packSize);
     display_price(calculate_Price());
