@@ -1,3 +1,4 @@
+//instantiate variables
 let glazingName = ["Keep original", "Sugar milk", "Vanilla milk", "Double chocolate"];
 let glazeValue = [0.0, 0.0, 0.5, 1.5];
 let packSizeValue = [1, 3, 5, 10];
@@ -7,6 +8,7 @@ let glaze = 0;
 let packSize = 1;
 let updated_price = 0;
 
+//create two objects with names and values attached
 const glazingPrice = {
     "Keep original": 0,
     "Sugar milk": 0,
@@ -22,10 +24,11 @@ const packConnectValue = {
     "12":10
 }
 
+//call querySelector
 const listGlazeOpt = document.querySelector("#glazingOptions");
 const packSizeOpt = document.querySelector("#packSizeOptions");
 
-
+//calculate prices for when user clicks on glazing options and pack size
 function calculate_Price(element) {
     let glazingValue = document.getElementById("glazingOptions").value;
     console.log(glazingValue);
@@ -46,6 +49,7 @@ function computePacksizePrice() {
     display_price(calculate_Price());
 }
 
+//use for loops to display dropdown
 for (var j = 0; j<glazingName.length; j++){
     const glazeOption = document.createElement('option');
     glazeOption.innerText = glazingName[j];
