@@ -24,7 +24,7 @@ const packConnectValue = {
     "12":10
 }
 
-//call querySelector
+//call querySelector to search elements 
 const listGlazeOpt = document.querySelector("#glazingOptions");
 const packSizeOpt = document.querySelector("#packSizeOptions");
 
@@ -37,6 +37,7 @@ function calculate_Price(element) {
 
     let glazePrice = glazingPrice[glazingValue];
     let packPrice = packConnectValue[packingValue];
+    //calculate price
     updated_price = (basePrice + glazePrice)*packPrice;
 
     updated_price = updated_price.toFixed(2);
