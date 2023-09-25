@@ -34,13 +34,15 @@ function calculate_Price(element) {
     console.log(glazingValue);
     let packingValue = document.getElementById("packSizeOptions").value;
     console.log(packingValue);
+
     let glazePrice = glazingPrice[glazingValue];
     let packPrice = packConnectValue[packingValue];
     updated_price = (basePrice + glazePrice)*packPrice;
+
     updated_price = updated_price.toFixed(2);
     document.getElementById("currentPrice").innerHTML = "$" + updated_price;
-    return updated_price;
 
+    return updated_price;
 }
 
 function computePacksizePrice() {
