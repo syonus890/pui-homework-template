@@ -84,6 +84,7 @@ headerElement.innerText = rollType + " Cinnamon Roll";
 const rollImage = document.querySelector("#rollImage");
 rollImage.src = './assets/products/' + rolls[rollType].imageFile;
 
+//update text on click
 const rollPrice = document.querySelector("#currentPrice");
 rollPrice.innerText = "$" + rolls[rollType].basePrice;
 
