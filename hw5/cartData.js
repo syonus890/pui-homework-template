@@ -79,5 +79,4 @@ function removeItem(roll, index) {
      console.log(cart);
      document.querySelector("#cart-Total").innerText = calculateTotalPrice();
      console.log(document.querySelector("#cart-Total").innerText);
-    //  displayCart();
 } 
