@@ -5,7 +5,7 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <script defer src="rollsData.js"></script>
-    <script defer src="updatePrice.js"></script>
+    <script defer src="cartData.js"></script>
   </head>
 
   <body>
@@ -30,35 +30,30 @@
    </div>
   </div>
 
+<div class="encompass">
+ <template id="cart-item">
   <div class="cartFlex">
     <div class="cartImage">
-      <img class="pictures marginPhoto" src="./assets/products/original-cinnamon-roll.jpg" alt="orginial cinnamon roll"
-        width="150">
-        <p class="removeFlex"> <u>Remove</u></p>
-    </div>
-  
-      <p class="productDetail">Original Cinnamon Roll<br>
-        Glaze: Keep original<br>Pack: 1<br></p>
-      <p class="productPrice">$ 2.49</p>
-  </div>
-
-  <div class="cartFlex">
-    <div class="cartImage">
-      <img class="pictures marginPhoto" src="./assets/products/double-chocolate-cinnamon-roll.jpg" 
+      <img class="pictures-marginPhoto" src="./assets/products/double-chocolate-cinnamon-roll.jpg" 
       alt="double chocolate cinnamon roll"
       width="150">
       <p class="removeFlex"> <u>Remove</u></p>
     </div>
-      <p class="productDetail">Double Chocolate Cinnamon Roll<br>Glaze: Sugar milk<br>Pack: 6<br></p>
+      <div>
+        <p class="productDetail">Double Chocolate Cinnamon Roll<p id="cart-glaze">Glaze: Sugar milk</p><p id="cart-pack">Pack: 6</p></p>
+      </div>
       <p class="productPrice">$ 27.45</p>
   </div>
+</template>
+</div>
+<div class="the-whole-shopping-cart"></div>
 
 <hr class="cartLine">
 
 <div class="">
   <div class="checkoutStyle">
     <p class="cartTotal">Total:</p> 
-    <p>$ 29.94</p>
+    <p id="cart-Total"></p>
   </div>
   <button class="button1">Checkout</button> 
 </div>
