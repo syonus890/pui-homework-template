@@ -34,6 +34,7 @@ const rolls = {
     }    
 };
 
+//types of glazes and their prices
 const glazingPrice = {
     "Keep original": 0,
     "Sugar milk": 0,
@@ -41,6 +42,7 @@ const glazingPrice = {
     "Double chocolate": 1.5
 }
 
+//pack sizes and their prices
 const packConnectValue = {
     "1": 1,
     "3": 3,
