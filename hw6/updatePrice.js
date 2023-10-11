@@ -8,9 +8,10 @@ let glaze = 0;
 let packSize = 1;
 let updated_price = 0;
 let glazingValue = 0;
-let packingValue = 0; 
+let packingValue = 0;
 
-// create two objects with names and values attached
+
+//create two objects with names and values attached
 const glazingPrice = {
     "Keep original": 0,
     "Sugar milk": 0,
