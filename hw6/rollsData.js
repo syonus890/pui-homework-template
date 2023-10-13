@@ -42,7 +42,7 @@ const glazingPrice = {
     "Double chocolate": 1.5
 }
 
-//pack sizes and their prices
+// //pack sizes and their prices
 const packConnectValue = {
     "1": 1,
     "3": 3,

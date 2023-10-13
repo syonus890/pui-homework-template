@@ -1,6 +1,6 @@
 //cart array
 const cart = [];
-
+retrieveFromLocalStorage();
 //calculate the base price for each roll
 function calculateBasePrice(rollType, rollGlazing) {
     let basePrice = 0;
@@ -22,70 +22,65 @@ function calculateBasePrice(rollType, rollGlazing) {
     return combineBasePrice;
 }
 
-//objects 
-let originalRoll = new Roll("Original", "Sugar milk", 1, calculateBasePrice("Original", "Sugar milk"));
-let walnutRoll = new Roll("Walnut", "Vanilla milk", 12, calculateBasePrice("Walnut", "Vanilla milk"));
-let raisinRoll = new Roll("Raisin", "Sugar milk", 3, calculateBasePrice("Raisin", "Sugar milk"));
-let appleRoll = new Roll("Apple", "Keep original", 3, calculateBasePrice("Apple", "Keep original"));
+function saveToLocalStorage() {
+    const cartString = JSON.stringify(cart);
+    sessionStorage.setItem('storedCart', cartString);
+}
 
-//push objects in cart array
-cart.push(originalRoll);
-cart.push(walnutRoll);
-cart.push(raisinRoll);
-cart.push(appleRoll);
+function retrieveFromLocalStorage(){
+    const cartArrayString = sessionStorage.getItem("storedCart");
+    const cartArray = JSON.parse(cartArrayString);
+    for (const cartData of cartArray) {
+        cart.push(cartData);
+    }
+}
 
-//calculate the roll price 
-function calculatePackSizePrice(roll) {
-    let packMultiplier = packConnectValue[roll.size];
-    let combined = calculateBasePrice(roll.type, roll.glazing);
-    return (combined * packMultiplier).toFixed(2);
+let final_price=0;
+for (let x of cart) {
+    displayCart(x);
 }
 
 //display cart in HTML file with template<>
-function displayCart(roll, index) {
+function displayCart(roll) {
     let template = document.querySelector("#cart-item");
     let templatePage = template.content.cloneNode(true);
     roll.element = templatePage.querySelector(".cartFlex");
     
     //call html classes/ids to edit text on page
-    templatePage.querySelector(".pictures-marginPhoto").src = "./assets/products/" + rolls[roll.type]["imageFile"];
+    templatePage.querySelector(".pictures-marginPhoto").src = "./assets/products/" + rolls[roll.type].imageFile;
     templatePage.querySelector(".productDetail").innerText = roll.type + " Cinnamon Roll";
     templatePage.querySelector("#cart-glaze").innerText = roll.glazing;
     templatePage.querySelector("#cart-pack").innerText = "Pack size: " + roll.size;
-    templatePage.querySelector(".productPrice").innerText = "$" + calculatePackSizePrice(roll);
-    templatePage.querySelector(".removeFlex").addEventListener("click", function(){removeItem(roll, index)});
+    templatePage.querySelector(".productPrice").innerText = "$" + calculate_Price(roll);
+    final_price = final_price + calculate_Price(roll);
+    templatePage.querySelector(".removeFlex").addEventListener("click", function(){removeItem(roll)});
     console.log(templatePage.querySelector(".removeFlex"));
 
     
     let cartParent = document.querySelector(".the-whole-shopping-cart");
     cartParent.appendChild(roll.element);
+    saveToLocalStorage();
 }
 
-//display 4 rolls in cart
-displayCart(originalRoll, 0);
-displayCart(walnutRoll, 1);
-displayCart(raisinRoll, 2);
-displayCart(appleRoll, 3);
 
-//calculate the total price in the cart
-function calculateTotalPrice() {
-    let sum = 0;
-    for (let i = 0; i < cart.length; i++){
-        sum = sum + parseFloat(calculatePackSizePrice(cart[i]));
-    }
-
-    return "$" + sum.toFixed(2);
-
+function calculate_Price(roll) {
+    const glaze_price = glazingPrice[roll.glazing];  // Access the glaze price directly
+    const packsize_price = packConnectValue[roll.size]; // Use 'size' instead of 'glazing' here
+    const totalPrice = (rolls[roll.type].basePrice + glaze_price) * packsize_price;
+    return parseFloat(totalPrice.toFixed(2)); // Ensure final_price is always rounded to 2 decimal places
 }
+
+
 
 //change total cart price in cartpage.html 
-document.querySelector("#cart-Total").innerText = calculateTotalPrice();
+document.querySelector("#cart-Total").innerText = '$' + final_price.toFixed(2);
 
-//remove item in cart 
-function removeItem(roll, index) {
+
+function removeItem(roll) {
+    const removedPrice = calculate_Price(roll);
+    final_price = parseFloat((final_price - removedPrice).toFixed(2));
     roll.element.remove();
-     cart.splice(index, 1);
-     console.log(cart);
-     document.querySelector("#cart-Total").innerText = calculateTotalPrice();
-     console.log(document.querySelector("#cart-Total").innerText);
-} 
+    cart.splice(cart.indexOf(roll), 1);
+    document.querySelector("#cart-Total").innerText = '$' + final_price.toFixed(2); // Update the total price
+    saveToLocalStorage();
+}
