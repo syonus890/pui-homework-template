@@ -1,6 +1,8 @@
 //cart array
 const cart = [];
+
 retrieveFromLocalStorage();
+
 //calculate the base price for each roll
 function calculateBasePrice(rollType, rollGlazing) {
     let basePrice = 0;
@@ -22,11 +24,13 @@ function calculateBasePrice(rollType, rollGlazing) {
     return combineBasePrice;
 }
 
+//call local storage
 function saveToLocalStorage() {
     const cartString = JSON.stringify(cart);
     sessionStorage.setItem('storedCart', cartString);
 }
 
+//retrieve data from cart page to local storage 
 function retrieveFromLocalStorage(){
     const cartArrayString = sessionStorage.getItem("storedCart");
     const cartArray = JSON.parse(cartArrayString);
@@ -35,6 +39,7 @@ function retrieveFromLocalStorage(){
     }
 }
 
+//display the final price
 let final_price=0;
 for (let x of cart) {
     displayCart(x);
@@ -64,23 +69,21 @@ function displayCart(roll) {
 
 
 function calculate_Price(roll) {
-    const glaze_price = glazingPrice[roll.glazing];  // Access the glaze price directly
-    const packsize_price = packConnectValue[roll.size]; // Use 'size' instead of 'glazing' here
+    const glaze_price = glazingPrice[roll.glazing];  // access the glaze price directly
+    const packsize_price = packConnectValue[roll.size]; // use 'size' instead of 'glazing' here
     const totalPrice = (rolls[roll.type].basePrice + glaze_price) * packsize_price;
-    return parseFloat(totalPrice.toFixed(2)); // Ensure final_price is always rounded to 2 decimal places
+    return parseFloat(totalPrice.toFixed(2)); // ensure final_price is always rounded to 2 decimal places
 }
-
-
 
 //change total cart price in cartpage.html 
 document.querySelector("#cart-Total").innerText = '$' + final_price.toFixed(2);
 
-
+//add remove function to delete element from local storage
 function removeItem(roll) {
     const removedPrice = calculate_Price(roll);
     final_price = parseFloat((final_price - removedPrice).toFixed(2));
     roll.element.remove();
     cart.splice(cart.indexOf(roll), 1);
-    document.querySelector("#cart-Total").innerText = '$' + final_price.toFixed(2); // Update the total price
+    document.querySelector("#cart-Total").innerText = '$' + final_price.toFixed(2); // update the total price
     saveToLocalStorage();
 }

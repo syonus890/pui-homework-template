@@ -99,12 +99,14 @@ function addToCart() {
     saveToLocalStorage();
 }
 
+//save added cart items to local storage 
 function saveToLocalStorage() {
     const cartString = JSON.stringify(cart);
     sessionStorage.setItem('storedCart', cartString);
     console.log(cartString);
 }
 
+//retrieve data from local storage 
 function retrieveFromLocalStorage(){
     const cartArrayString = sessionStorage.getItem("storedCart");
     const cartArray = JSON.parse(cartArrayString);
