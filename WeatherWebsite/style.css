@@ -23,6 +23,7 @@ h1 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
 }
 #department {
     color: #000;
@@ -33,4 +34,14 @@ h1 {
     line-height: normal;
     text-align: center;
 
+}
+#button {
+    text-align: center;
+    font-family: Karla;
+    font-size: 20px;
+}
+#submit {
+    border-radius: 5px;
+    background: #CFEBFF;
+    font-family: Karla;
 }
