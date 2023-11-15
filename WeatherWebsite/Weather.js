@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById("submit");
     submitButton.addEventListener("click", getWeatherAndOutfit);
@@ -7,13 +8,17 @@ function getWeatherAndOutfit() {
     const locationInput = document.getElementById("location");
     const location = locationInput.value;
 
-    // Call a weather API to get weather data for the location
+    // Call weatherstack API to get weather data for the location
     // Replace 'API_KEY' and 'API_URL' with your API details
-    fetch(`API_URL?location=${location}&apiKey=API_KEY`)
+
+    const apiKey = '1e122bc94cabc5ad1f8bfba0fca187eb';
+    const apiURL = `https://api.weatherstack.com/current?access_key=${apiKey}&query=${location}`;
+
+    fetch(apiURL)
         .then(response => response.json())
         .then(data => {
-            const temperature = data.main.temp;
-            const conditions = data.weather[0].main;
+            const temperature = data.current.temperature;
+            const conditions = data.current.weather_descriptions[0];
             
             // Generate an outfit suggestion based on temperature and conditions
             const outfitSuggestion = generateOutfit(temperature, conditions);
@@ -27,11 +32,10 @@ function getWeatherAndOutfit() {
 }
 
 function generateOutfit(temperature, conditions) {
-    // Add your logic to generate outfit suggestions based on temperature and conditions here.
+    // Logic to generate outfit suggestions based on temperature and conditions here.
     // For example, you can use if statements to determine the outfit.
     // You may need to define different outfits for various weather conditions.
     
-    // Example logic:
     if (temperature < 10) {
         return "Wear a heavy coat, gloves, and a scarf.";
     } else if (temperature < 20) {
