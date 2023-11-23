@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Forecasted Fashion</title>
-    <script src="Weather.js"></script>
+    <script src="Weather.js" defer></script>
 </head>
 <body>
     <a href="WeatherWebsite.html">
     <h1>Forecasted Fashion</h1>
     </a>
+    <div id="forecast">
+        <h2>Today's forecast</h2>
+    </div>
     <div id="description">
         <p> Here is your outfit for today!</p>
     </div>
-   <div>
-    <img scr="">
-   </div>
-    <div id="button" id="submitButton">
-        <button id="submit">Generate</button>
+    <div id="display-data">
+    </div>
+    <div id="button" id="generateButton">
+        <button onclick=
+        "outfitImage();">Generate</button> 
     </div>
     <div id="weather-forecast">
-        <!-- Display weather forecast and outfit suggestion here -->
+      
     </div>
 </body>
 </html>
+

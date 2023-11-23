@@ -19,7 +19,7 @@ h1 {
 }
 #description {
     font-family: Karla;
-    font-size: 28px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -54,4 +54,20 @@ h1 {
 }
 #border {
    margin-top: 8%;
+}
+img {
+    border-radius: 10px;
+    border: 1px solid #000;
+    width: 300px;
+    height: 400px;
+    flex-shrink: 0;
+
+}
+h2 {
+    font-family: Karla;
+    font-size: 32px;
+    font-weight: normal;
+}
+#display-data {
+    text-align: center;
 }

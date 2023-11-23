@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Forecasted Fashion</title>
-    <script src="Weather.js"></script>
+    <script src="Weather.js" defer></script>
 </head>
 <body>
     <h1>Forecasted Fashion</h1>
@@ -31,9 +31,10 @@
         </div>
         <div id="button" id="submitButton">
             <a href="WeatherOutfit.html">
-            <button id="submit">Submit</button>
+            <button onclick ="getWeatherAndOutfit()"; id="submit">Submit</button>
             </a>
         </div>
     </div>
 </body>
 </html>
+
