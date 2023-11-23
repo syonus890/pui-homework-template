@@ -47,7 +47,7 @@ h1 {
     font-family: Karla;
     font-size: 20px;
 }
-#submit {
+#submitZipcode {
     border-radius: 5px;
     background: #CFEBFF;
     font-family: Karla;
@@ -68,6 +68,38 @@ h2 {
     font-size: 32px;
     font-weight: normal;
 }
+h3 {
+    font-family: Karla;
+    font-size: 26px;
+    font-weight: normal;
+}
 #display-data {
+    text-align: center;
+}
+.temperature {
+    font-family: Karla;
+    font-size: 26px;
+    font-weight: normal;
+
+}
+.city {
+    font-family: Karla;
+    font-size: 26px;
+    font-weight: normal;
+}
+.condition {
+    font-family: Karla;
+    font-size: 26px;
+    font-weight: normal;
+}
+body{
+    background-image:url('PUI-Images/photo-1504253163759-c23fccaebb55.avif');
+    background-size: cover;
+    
+    height: 140vh;
+    padding:0;
+    margin:0;
+}
+#forecast {
     text-align: center;
 }

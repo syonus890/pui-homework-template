@@ -12,7 +12,36 @@
     </a>
     <div id="forecast">
         <h2>Today's forecast</h2>
+        <h3 class="city">Pittsburgh</h3>
+        <div class="temperature"></div>
+        <div include-html="WeatherWebsite.html"></div>
+
+        <script>
+            const apiKey = "3bcf6d5fa69b8119f53fea9e7fb31efb";
+            const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+            const searchBox = document.querySelector("#location");
+            const searchButton = document.querySelector("#submitZipcode");
+
+            async function checkWeather(city){
+                //const response = await fetch($apiUrl + city + `&appid={apiKey}`);
+                const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+                var data = await response.json();
+
+                console.log(data);
+
+                document.querySelector(".city").innerHTML = data.name;
+                document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°C";
+            }
+
+            searchButton.addEventListener("click", ()=> {
+                checkWeather(searchBox.value);
+
+            })            
+
+        </script>
     </div>
+
     <div id="description">
         <p> Here is your outfit for today!</p>
     </div>
@@ -21,9 +50,6 @@
     <div id="button" id="generateButton">
         <button onclick=
         "outfitImage();">Generate</button> 
-    </div>
-    <div id="weather-forecast">
-      
     </div>
 </body>
 </html>

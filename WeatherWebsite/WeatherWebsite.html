@@ -10,7 +10,7 @@
     <h1>Forecasted Fashion</h1>
     <div id="border">
         <div id="description">
-            <p> Welcome! Input your zipcode and we will generate an outfit based on your areas weather.</p>
+            <p> Welcome! Input your zipcode or city's name and we will generate an outfit based on your areas weather.</p>
         </div>
         <div style="text-align: center;" id="location-form">
             <div style="display: inline-block; text-align: left;">
@@ -29,12 +29,59 @@
             <p> Men's department<input type="checkbox"></p>
             </div>
         </div>
+
         <div id="button" id="submitButton">
-            <a href="WeatherOutfit.html">
-            <button onclick ="getWeatherAndOutfit()"; id="submit">Submit</button>
+            <!-- <a href="WeatherOutfit.html"> -->
+            <!-- <button onclick ="getWeatherAndOutfit()"; id="submitZipcode">Submit</button> -->
+            <button id="submitZipcode">Submit</button>
             </a>
         </div>
     </div>
+
+
+
+    <div id="forecast">
+        <h2>Today's forecast</h2>
+        <h3 class="city"></h3>
+        <div class="temperature"></div>
+        <div class="condition"></div>
+
+        <script>
+            const apiKey = "3bcf6d5fa69b8119f53fea9e7fb31efb";
+            const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+            const searchBox = document.querySelector("#location");
+            const searchButton = document.querySelector("#submitZipcode");
+
+            async function checkWeather(city){
+                const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+                var data = await response.json();
+
+                console.log(data);
+
+                document.querySelector(".city").innerHTML = data.name;
+                document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°C";
+                document.querySelector(".condition").innerHTML = data.weather.main;
+            }
+
+            searchButton.addEventListener("click", ()=> {
+                checkWeather(searchBox.value);
+
+            })            
+
+        </script>
+          <div id="description">
+            <p> Here is your outfit for today!</p>
+        </div>
+        <div id="display-data">
+        </div>
+        <div id="button" id="generateButton">
+            <button onclick=
+            "outfitImage();">Generate</button> 
+        </div>
+    </div>
+
+  
 </body>
 </html>
 
