@@ -7,14 +7,16 @@
     <script src="Weather.js" defer></script>
 </head>
 <body>
-    <h1>Forecasted Fashion</h1>
+    <a href="WeatherWebsite.html">
+        <h1>Forecasted Fashion</h1>
+        </a>
     <div id="border">
         <div id="description">
             <p> Welcome! Input your zipcode or city's name and we will generate an outfit based on your areas weather.</p>
         </div>
         <div style="text-align: center;" id="location-form">
             <div style="display: inline-block; text-align: left;">
-            <label for="location">Enter Your zipcode: </label>
+            <label for="location">Enter Your zipcode or city's name: </label>
             </div>
             <div style="text-align: center;">
                 <div style="display: inline-block; text-align: left;">
@@ -31,21 +33,19 @@
         </div>
 
         <div id="button" id="submitButton">
-            <!-- <a href="WeatherOutfit.html"> -->
-            <!-- <button onclick ="getWeatherAndOutfit()"; id="submitZipcode">Submit</button> -->
-            <button id="submitZipcode">Submit</button>
+            <button onclick=
+            "outfitImage();" id="submitZipcode">Submit</button>
             </a>
         </div>
     </div>
-
-
-
     <div id="forecast">
-        <h2>Today's forecast</h2>
+        <h2><u>Today's forecast</u></h2>
+    <div style="display: inline-block; text-align: left;">
         <h3 class="city"></h3>
         <div class="temperature"></div>
-        <div class="condition"></div>
-
+        <div class="mintemp"></div>
+        <div class="maxtemp"></div>
+    </div>
         <script>
             const apiKey = "3bcf6d5fa69b8119f53fea9e7fb31efb";
             const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -59,25 +59,23 @@
 
                 console.log(data);
 
-                document.querySelector(".city").innerHTML = data.name;
-                document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°C";
-                document.querySelector(".condition").innerHTML = data.weather.main;
+                document.querySelector(".city").innerHTML = "City: " + data.name;
+                document.querySelector(".temperature").innerHTML = "Current temperature: " + Math.round(data.main.temp) + "°C";
+                document.querySelector(".mintemp").innerHTML = "Minimum temperature: " + Math.round(data.main.temp_min) + "°C";
+                document.querySelector(".maxtemp").innerHTML = "Maximum temperature: " + Math.round(data.main.temp_max) + "°C";
+
             }
 
             searchButton.addEventListener("click", ()=> {
                 checkWeather(searchBox.value);
 
             })            
-
         </script>
-          <div id="description">
-            <p> Here is your outfit for today!</p>
-        </div>
+        <div id="display-words"> </div>
         <div id="display-data">
         </div>
-        <div id="button" id="generateButton">
-            <button onclick=
-            "outfitImage();">Generate</button> 
+          <div id="description">
+            <p></p>
         </div>
     </div>
 

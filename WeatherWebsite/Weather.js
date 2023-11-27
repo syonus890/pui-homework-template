@@ -1,88 +1,126 @@
-// let globalTemperature;
-// var temperature = document.querySelector("#temperature")
-// var submitZip = document.querySelector("#submitZipcode")
+const products = {
 
+    "shirt":
+        [
+            {
+                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html?dwvar_104190_color=29484",
+                "imageTitle": "shirt-1"
+            },
+            {
+                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html",
+                "imageTitle": "shirt-2"
+            },
+            {
+                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html?dwvar_104190_color=30175",
+                "imageTitle": "shirt-3"
+            },
+            {
+                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html?dwvar_104190_color=1274",
+                "imageTitle": "shirt-4"
+            }
+        ],
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const submitButton = document.getElementById("submitZipcode");
-//     submitButton.addEventListener("click", function () {
-//         getWeatherAndOutfit();
-//     });
-// });
+        "pants": [
+            [
+                {
+                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=15104",
+                    "imageTitle": "pants-1"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=15033",
+                    "imageTitle": "pants-2"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=28701",
+                    "imageTitle": "pants-3"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=1274",
+                    "imageTitle": "pants-4" 
+                }
+            ],
 
-// function getWeatherAndOutfit() {
-//     const locationInput = document.getElementById("location");
-//     const location = locationInput.value;
+        ],
 
+        "jacket": [
+            [
+                {
+                    "link": "https://www.aritzia.com/us/en/product/symphony-coat/109853.html?dwvar_109853_color=6162#fs",
+                    "imageTitle": "jacket-1"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/symphony-coat/109853.html?dwvar_109853_color=2529",
+                    "imageTitle": "jacket-2"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/symphony-coat/109853.html?dwvar_109853_color=1274",
+                    "imageTitle": "jacket-3"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/the-super-puff™/111494.html?dwvar_111494_color=1274",
+                    "imageTitle": "jacket-4" 
+                }
+            ]
+        ],
 
-//     let zipcode = [
-//         {
-//             city: "Mission Viejo",
-//             cityZip: 92688
-//         },
-//         {
-//             city: "Pittsburgh",
-//             cityZip: 15232
-//         },
-//         {
-//             city: "Irvine",
-//             cityZip: 92602
-//         },
-//         {
-//             city: "San Diego",
-//             cityZip: 92122
-//         },
-//         {
-//             city: "San Francisco",
-//             cityZip: 94016
-//         }
-//     ];
-
-//     function findAPIurl() {
-//         for (let i = 0; i < locationInput.length; i++){
-//             if (locationInput[i].city === location) {
-//                 return locationInput.cityZip;
-//             }
-//         }
-//     }
-
-//     // Call OpenWeatherMaps API to get weather data for the location
-//     const cityZipcode  =findAPIurl();
-//     const apiKey = '3bcf6d5fa69b8119f53fea9e7fb31efb';
-//     const apiURL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=berlin`;
-
-//     fetch(apiURL)
-//         .then(response => response.json())
-//         .then(data => {
-//             globalTemperature = data.current.temperature;
-//             const conditions = data.current.weather_descriptions[0];
-
-//             // Display weather data on WeatherOutfit.html
-//             const weatherForecast = document.getElementById("temperature");
-//             weatherForecast.innerHTML = `For ${location}, it's ${globalTemperature}°C and ${conditions}.`;
-
-//             console.log(data);
-//             // Generate and display outfit images
-//             outfitImage();
-//         })
-//         .catch(error => {
-//             console.error("Error fetching weather data:", error);
-//         });
-// }
+        "shoes": [
+            [
+                {
+                    "link": "https://www.aritzia.com/us/en/product/gt-2160/111554.html?dwvar_111554_color=31136",
+                    "imageTitle": "shoes-1"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/xt-6/92321.html?dwvar_92321_color=28628",
+                    "imageTitle": "shoes-2"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/530/82640.html?dwvar_82640_color=31176",
+                    "imageTitle": "shoes-3"
+                },
+                {
+                    "link": "https://www.aritzia.com/us/en/product/2002/84719.html?dwvar_84719_color=28053",
+                    "imageTitle": "shoes-4" 
+                }
+            ]
+        ]
+    }
 
 function outfitImage() {
-    // You can customize this function to generate and display outfit images.
-    // For example, update the content of the "display-data" div with the outfit images.
-
     const displayData = document.getElementById("display-data");
+    const displayWords = document.getElementById("display-words");
 
     displayData.innerHTML = "";
+    displayWords.innerHTML = "Here is your outfit for today!"
+
+    // Call the function to get a random outfit
+    const randomOutfit = getRandomOutfit();
 
     // Add outfit images to the displayData div
-    generateOutfit("PUI-Images/Screenshot 2023-10-29 at 5.05.48 PM.png", 200, 100, "Outfit", displayData);
-    generateOutfit("PUI-Images/Screenshot 2023-10-29 at 5.06.25 PM.png", 200, 100, "Outfit", displayData);
-    generateOutfit("PUI-Images/Screenshot 2023-10-29 at 5.06.44 PM.png", 200, 100, "Outfit", displayData);
-    generateOutfit("PUI-Images/Screenshot 2023-10-29 at 5.07.21 PM.png", 200, 100, "Outfit", displayData);
+    generateOutfit(randomOutfit.shirt.link, 200, 100, "Shirt", displayData);
+    generateOutfit(randomOutfit.pants.link, 200, 100, "Pants", displayData);
+    generateOutfit(randomOutfit.jacket.link, 200, 100, "Jacket", displayData);
+    generateOutfit(randomOutfit.shoes.link, 200, 100, "Shoes", displayData);
+}
+
+function getRandomOutfit() {
+    const shirtIndex = getRandomIndex("shirt");
+    const pantsIndex = getRandomIndex("pants");
+    const jacketIndex = getRandomIndex("jacket");
+    const shoesIndex = getRandomIndex("shoes");
+
+    const randomOutfit = {
+        shirt: products.shirt[shirtIndex],
+        pants: products.pants[0][pantsIndex],
+        jacket: products.jacket[0][jacketIndex],
+        shoes: products.shoes[0][shoesIndex],
+    };
+
+    return randomOutfit;
+}
+
+function getRandomIndex(category) {
+    const categoryItems = products[category];
+    return Math.floor(Math.random() * categoryItems.length);
 }
 
 function generateOutfit(src, width, height, alt, parentElement) {
@@ -94,3 +132,6 @@ function generateOutfit(src, width, height, alt, parentElement) {
 
     parentElement.appendChild(img);
 }
+
+// Call the outfitImage function to display a random outfit when needed
+outfitImage();
