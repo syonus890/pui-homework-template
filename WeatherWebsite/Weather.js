@@ -3,19 +3,19 @@ const products = {
     "shirt":
         [
             {
-                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html?dwvar_104190_color=29484",
+                "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.43.28 PM.png",
                 "imageTitle": "shirt-1"
             },
             {
-                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html",
+                "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.43.43 PM.png",
                 "imageTitle": "shirt-2"
             },
             {
-                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html?dwvar_104190_color=30175",
+                "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.43.57 PM.png",
                 "imageTitle": "shirt-3"
             },
             {
-                "link": "https://www.aritzia.com/us/en/product/contour-squareneck-shortsleeve-t-shirt/104190052.html?dwvar_104190_color=1274",
+                "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.44.11 PM.png",
                 "imageTitle": "shirt-4"
             }
         ],
@@ -23,19 +23,19 @@ const products = {
         "pants": [
             [
                 {
-                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=15104",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.45.43 PM.png",
                     "imageTitle": "pants-1"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=15033",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.45.59 PM.png",
                     "imageTitle": "pants-2"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=28701",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.46.13 PM.png",
                     "imageTitle": "pants-3"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/the-effortless-pant™/77775.html?dwvar_77775_color=1274",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.46.25 PM.png",
                     "imageTitle": "pants-4" 
                 }
             ],
@@ -45,19 +45,19 @@ const products = {
         "jacket": [
             [
                 {
-                    "link": "https://www.aritzia.com/us/en/product/symphony-coat/109853.html?dwvar_109853_color=6162#fs",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.00 PM.png",
                     "imageTitle": "jacket-1"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/symphony-coat/109853.html?dwvar_109853_color=2529",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.14 PM.png",
                     "imageTitle": "jacket-2"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/symphony-coat/109853.html?dwvar_109853_color=1274",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.33 PM.png",
                     "imageTitle": "jacket-3"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/the-super-puff™/111494.html?dwvar_111494_color=1274",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.50 PM.png",
                     "imageTitle": "jacket-4" 
                 }
             ]
@@ -66,24 +66,26 @@ const products = {
         "shoes": [
             [
                 {
-                    "link": "https://www.aritzia.com/us/en/product/gt-2160/111554.html?dwvar_111554_color=31136",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.54.40 PM.png",
                     "imageTitle": "shoes-1"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/xt-6/92321.html?dwvar_92321_color=28628",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.54.51 PM.png",
                     "imageTitle": "shoes-2"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/530/82640.html?dwvar_82640_color=31176",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.55.04 PM.png",
                     "imageTitle": "shoes-3"
                 },
                 {
-                    "link": "https://www.aritzia.com/us/en/product/2002/84719.html?dwvar_84719_color=28053",
+                    "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.55.24 PM.png",
                     "imageTitle": "shoes-4" 
                 }
             ]
         ]
     }
+
+    
 
 function outfitImage() {
     const displayData = document.getElementById("display-data");
@@ -96,10 +98,10 @@ function outfitImage() {
     const randomOutfit = getRandomOutfit();
 
     // Add outfit images to the displayData div
-    generateOutfit(randomOutfit.shirt.link, 200, 100, "Shirt", displayData);
-    generateOutfit(randomOutfit.pants.link, 200, 100, "Pants", displayData);
-    generateOutfit(randomOutfit.jacket.link, 200, 100, "Jacket", displayData);
-    generateOutfit(randomOutfit.shoes.link, 200, 100, "Shoes", displayData);
+    generateOutfit(randomOutfit.shirt.imagePath, 200, 100, "Shirt", displayData);
+    generateOutfit(randomOutfit.pants.imagePath, 200, 100, "Pants", displayData);
+    generateOutfit(randomOutfit.jacket.imagePath, 200, 100, "Jacket", displayData);
+    generateOutfit(randomOutfit.shoes.imagePath, 200, 100, "Shoes", displayData);
 }
 
 function getRandomOutfit() {
@@ -133,5 +135,4 @@ function generateOutfit(src, width, height, alt, parentElement) {
     parentElement.appendChild(img);
 }
 
-// Call the outfitImage function to display a random outfit when needed
-outfitImage();
+
