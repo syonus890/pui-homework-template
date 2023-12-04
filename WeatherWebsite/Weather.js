@@ -21,7 +21,7 @@ const products = {
         ],
 
         "pants": [
-            [
+            
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.45.43 PM.png",
                     "imageTitle": "pants-1"
@@ -38,12 +38,12 @@ const products = {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.46.25 PM.png",
                     "imageTitle": "pants-4" 
                 }
-            ],
+            
 
         ],
 
         "jacket": [
-            [
+            
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.00 PM.png",
                     "imageTitle": "jacket-1"
@@ -60,11 +60,11 @@ const products = {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.50 PM.png",
                     "imageTitle": "jacket-4" 
                 }
-            ]
+            
         ],
 
         "shoes": [
-            [
+            
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.54.40 PM.png",
                     "imageTitle": "shoes-1"
@@ -81,11 +81,9 @@ const products = {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.55.24 PM.png",
                     "imageTitle": "shoes-4" 
                 }
-            ]
+            
         ]
     }
-
-    
 
 function outfitImage() {
     const displayData = document.getElementById("display-data");
@@ -112,9 +110,9 @@ function getRandomOutfit() {
 
     const randomOutfit = {
         shirt: products.shirt[shirtIndex],
-        pants: products.pants[0][pantsIndex],
-        jacket: products.jacket[0][jacketIndex],
-        shoes: products.shoes[0][shoesIndex],
+        pants: products.pants[pantsIndex],
+        jacket: products.jacket[jacketIndex],
+        shoes: products.shoes[shoesIndex],
     };
 
     return randomOutfit;
@@ -135,4 +133,49 @@ function generateOutfit(src, width, height, alt, parentElement) {
     parentElement.appendChild(img);
 }
 
+const apiKey = "3bcf6d5fa69b8119f53fea9e7fb31efb";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
+const searchBox = document.querySelector("#location");
+const searchButton = document.querySelector("#submitZipcode");
+
+async function checkWeather(city){
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    var data = await response.json();
+
+    console.log(data);
+
+    document.querySelector("#city").innerHTML = "City: " + data.name;
+    document.querySelector("#temperature").innerHTML = "Current temperature: " + Math.round(data.main.temp) + "°C";
+    document.querySelector("#mintemp").innerHTML = "Minimum temperature: " + Math.round(data.main.temp_min) + "°C";
+    document.querySelector("#maxtemp").innerHTML = "Maximum temperature: " + Math.round(data.main.temp_max) + "°C";
+    document.querySelector("#conditions").innerHTML = "Conditions: " + data.weather[0].main;
+
+    setBackgroundBasedOnWeather(data.weather[0].main);
+
+}
+
+function setBackgroundBasedOnWeather(weatherCondition) {
+    const body = document.body;
+
+    // Create a mapping between weather conditions and background images
+    const backgroundMap = {
+        'Clear': 'url("PUI-Images/sun.jpg")',
+        'Clouds': 'url("PUI-Images/pexels-pixabay-531767.jpg")',
+        'Rain': 'url("PUI-Images/0209_raindrops_jpg.jpeg")',
+    };
+
+    console.log("weather condition: ", weatherCondition);
+
+    // Set the background based on the weather condition
+    body.style.backgroundImage = backgroundMap[weatherCondition] || 'url("PUI-Images/360_F_469073270_H9pWB0wYhfKElKXD3k9R60gsYeH9xSQO.jpg")';
+
+    console.log("background image: ", body.style.backgroundImage);
+
+}
+
+searchButton.addEventListener("click", ()=> {
+    console.log('Search button clicked');
+    checkWeather(searchBox.value);
+
+}) 

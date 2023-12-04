@@ -9,77 +9,45 @@
 <body>
     <a href="WeatherWebsite.html">
         <h1>Forecasted Fashion</h1>
-        </a>
-    <div id="border">
-        <div id="description">
-            <p> Welcome! Input your zipcode or city's name and we will generate an outfit based on your areas weather.</p>
-        </div>
-        <div style="text-align: center;" id="location-form">
-            <div style="display: inline-block; text-align: left;">
-            <label for="location">Enter Your zipcode or city's name: </label>
-            </div>
-            <div style="text-align: center;">
+    </a>
+    <div id="description">
+        <p> Welcome! Input your zipcode or city's name and we will generate an outfit based on your areas weather.</p>
+    </div>
+    <div class = "top">
+        <div id="border">
+            <div id="location-form">
                 <div style="display: inline-block; text-align: left;">
-                <input type="text" id="location">
+                <label for="location">Enter Your zipcode or city's name: </label>
+                </div>
+                <div >
+                    <div style="display: inline-block; text-align: center;">
+                    <input type="text" id="location">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div style="text-align: center;" id="department">
-            <div style="display: inline-block; text-align: left;">
-            <p>Select clothes from:</p>
-            <p> Women's department<input type="checkbox"></p>
-            <p> Men's department<input type="checkbox"></p>
+            <!--Call outfitImage function to parse through json and display images -->
+            <div id="button" id="submitButton">
+                <button onclick=
+                "outfitImage();" id="submitZipcode">Submit</button>
+                </a>
             </div>
         </div>
-
-        <div id="button" id="submitButton">
-            <button onclick=
-            "outfitImage();" id="submitZipcode">Submit</button>
-            </a>
+        <div id="forecast">
+            <!--Call API to display weather based on user's input-->
+            <div class="weather-info">
+                <h2 id="forcast-head"><u>Today's forecast</u></h2>
+                <p class="weather-detail"id="city"></p>
+                <p class="weather-detail"id="temperature"></p>
+                <p class="weather-detail"id="mintemp"></p>
+                <p class="weather-detail"id="maxtemp"></p>
+                <p class="weather-detail"id="conditions"></p>
+            </div>
         </div>
     </div>
-    <div id="forecast">
-        <h2><u>Today's forecast</u></h2>
-    <div style="display: inline-block; text-align: left;">
-        <h3 class="city"></h3>
-        <div class="temperature"></div>
-        <div class="mintemp"></div>
-        <div class="maxtemp"></div>
-    </div>
-        <script>
-            const apiKey = "3bcf6d5fa69b8119f53fea9e7fb31efb";
-            const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-
-            const searchBox = document.querySelector("#location");
-            const searchButton = document.querySelector("#submitZipcode");
-
-            async function checkWeather(city){
-                const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-                var data = await response.json();
-
-                console.log(data);
-
-                document.querySelector(".city").innerHTML = "City: " + data.name;
-                document.querySelector(".temperature").innerHTML = "Current temperature: " + Math.round(data.main.temp) + "°C";
-                document.querySelector(".mintemp").innerHTML = "Minimum temperature: " + Math.round(data.main.temp_min) + "°C";
-                document.querySelector(".maxtemp").innerHTML = "Maximum temperature: " + Math.round(data.main.temp_max) + "°C";
-
-            }
-
-            searchButton.addEventListener("click", ()=> {
-                checkWeather(searchBox.value);
-
-            })            
-        </script>
+    <div class="bottom">
         <div id="display-words"> </div>
-        <div id="display-data">
-        </div>
-          <div id="description">
-            <p></p>
-        </div>
+        <div id="display-data"> </div>
     </div>
-
-  
 </body>
 </html>
 

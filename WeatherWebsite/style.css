@@ -15,8 +15,10 @@ h1 {
     font-family: Karla;
     font-size: 20px;
     text-align: left;
-    
-   
+    padding-left: 20%;
+    position:relative; 
+    bottom: 40px
+  
 }
 #description {
     font-family: Karla;
@@ -31,9 +33,9 @@ h1 {
     overflow-wrap: break-word;
     text-align: center;
     margin: auto;
-    margin-top: 50px;
     letter-spacing: 0.5px;
     line-height: normal;
+    margin-bottom: 30px;
 }
 
 #department {
@@ -43,24 +45,27 @@ h1 {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-align: center;
+    text-align: left;
+    padding-left: 30%;
 
 }
 #button {
-    text-align: center;
+    border-radius: 15px;
     font-family: Karla;
     font-size: 20px;
+    padding-left: 40%;
+    
 }
 #submitZipcode {
-    border-radius: 5px;
     background: #CFEBFF;
     font-family: Karla;
     width: 90px;
     height: 25px;
-    
 }
 #border {
-   margin-top: 8%;
+   margin-top: 5%;
+   width: 60%;
+   margin-right: 15%;
 }
 img {
     border-radius: 10px;
@@ -71,11 +76,11 @@ img {
 
 }
 h2 {
+    left: 70%; 
     font-family: Karla;
     font-size: 32px;
     font-weight: normal;
-    margin-top: 100px;
-    margin-bottom: 20px;
+    
 }
 h3 {
     font-family: Karla;
@@ -86,40 +91,64 @@ h3 {
     text-align: center;
     font-family: Karla;
     font-size: 28px;
+    /* margin-left: 30%; */
 }
 .temperature {
     font-family: Karla;
     font-size: 26px;
     font-weight: normal;
+    position: relative;
+    left: 70%;
+    margin: 0px;
+    width: 100%;
+    line-height: 2;
 }
 .city {
     font-family: Karla;
     font-size: 28px;
     font-weight: normal;
+    position: relative;
+    left: 70%;
+    margin: 0px;
+    width: 35%;
+    line-height: 2;
 }
 .mintemp {
     font-family: Karla;
     font-size: 26px;
     font-weight: normal;
     margin-top: 30px;
+    position: relative;
+    left: 48%;
+    margin: 0px;
+    left: 70%;
+    line-height: 2;
 }
 body{
-    background-image:url('PUI-Images/abstract-surface-textures-white-concrete-stone-wall_74190-8189.avif');
+    background-image:url('PUI-Images/360_F_469073270_H9pWB0wYhfKElKXD3k9R60gsYeH9xSQO.jpg'); 
     background-size: cover;
-    
-    height: 140vh;
-    padding:0;
-    margin:0;
+    padding: 0px;
+    margin: 0px;
 }
 #forecast {
-    text-align: center;
+    display: flex;
+    position: relative;
+    width: 50%;
+    margin: 0px;
+    justify-content: left;
+    text-justify: right;
 }
 .maxtemp {
     font-family: Karla;
     font-size: 26px;
     font-weight: normal;
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    left: 70%;
+    margin: 0px;
+    width: 100%;
+    line-height: 2;
 }
 label{ 
     font-family: Karla; 
@@ -129,10 +158,41 @@ label{
 #location {
     width: 230px;
     height: 25px;
+    float: left;
+    position: relative;
+    left: 30%; 
+    margin-top: 50px ;
 }
 #display-words{
-    text-align: center;
     font-family: Karla;
     font-size: 28px;
     margin-bottom: 40px;
+    margin-left: 35%;
+    
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+.conditions {
+    font-family: Karla;
+    font-size: 26px;
+    font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    margin: 0px;
+    width: 100%;
+    line-height: 2;
+
+}
+.weather-info {
+    font-family: Karla;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: left;
+    margin-bottom: 50px;
+
+
 }
