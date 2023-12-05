@@ -16,10 +16,8 @@
     <div class = "top">
         <div id="border">
             <div id="location-form">
-                <div style="display: inline-block; text-align: left;">
                 <label for="location">Enter Your zipcode or city's name: </label>
-                </div>
-                <div >
+                <div>
                     <div style="display: inline-block; text-align: center;">
                     <input type="text" id="location">
                     </div>
@@ -33,9 +31,9 @@
             </div>
         </div>
         <div id="forecast">
-            <!--Call API to display weather based on user's input-->
+            <!--Call API to display forecast, weather, minimum/maximum weather, and conditions based on user's input-->
             <div class="weather-info">
-                <h2 id="forcast-head"><u>Today's forecast</u></h2>
+                <h2 id="forcast-head">Today's forecast</h2>
                 <p class="weather-detail"id="city"></p>
                 <p class="weather-detail"id="temperature"></p>
                 <p class="weather-detail"id="mintemp"></p>
@@ -44,6 +42,7 @@
             </div>
         </div>
     </div>
+    <!--Display the outfits based on the weather-->
     <div class="bottom">
         <div id="display-words"> </div>
         <div id="display-data"> </div>
