@@ -1,4 +1,4 @@
-//JSON template for all the shirts, pants, jackets, and shoes
+//Data for all the shirts, pants, jackets, and shoes
 const products = {
 
     "shirt":
@@ -189,3 +189,5 @@ searchButton.addEventListener("click", ()=> {
     checkWeather(searchBox.value);
 
 }) 
+
+//add more images and conditions 
