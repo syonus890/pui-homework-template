@@ -18,6 +18,18 @@ const products = {
             {
                 "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.44.11 PM.png",
                 "imageTitle": "shirt-4"
+            },
+            {
+                "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.55.41 PM.png",
+                "imageTitle": "shirt-5"
+            },
+            {
+                "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.54.32 PM.png",
+                "imageTitle": "shirt-6"
+            },
+            {
+                "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.53.42 PM.png",
+                "imageTitle": "shirt-7"
             }
         ],
 
@@ -38,6 +50,18 @@ const products = {
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.46.25 PM.png",
                     "imageTitle": "pants-4" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.57.51 PM.png",
+                    "imageTitle": "pants-5" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.56.48 PM.png",
+                    "imageTitle": "pants-6" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.56.18 PM.png",
+                    "imageTitle": "pants-7" 
                 }
             
 
@@ -60,8 +84,20 @@ const products = {
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.50 PM.png",
                     "imageTitle": "jacket-4" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.52.45 PM.png",
+                    "imageTitle": "jacket-5"
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.52.10 PM.png",
+                    "imageTitle": "jacket-6"
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.51.43 PM.png",
+                    "imageTitle": "jacket-7"
                 }
-            
+                
         ],
 
         "shoes": [
@@ -81,6 +117,18 @@ const products = {
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.55.24 PM.png",
                     "imageTitle": "shoes-4" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.59.32 PM.png",
+                    "imageTitle": "shoes-5" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.59.01 PM.png",
+                    "imageTitle": "shoes-6" 
+                },
+                {
+                    "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.58.38 PM.png",
+                    "imageTitle": "shoes-7" 
                 }
             
         ]
@@ -98,10 +146,10 @@ function outfitImage() {
     const randomOutfit = getRandomOutfit();
 
     // Add outfit images to the display-data div
-    generateOutfit(randomOutfit.shirt.imagePath, 200, 100, "Shirt", displayData);
-    generateOutfit(randomOutfit.pants.imagePath, 200, 100, "Pants", displayData);
-    generateOutfit(randomOutfit.jacket.imagePath, 200, 100, "Jacket", displayData);
-    generateOutfit(randomOutfit.shoes.imagePath, 200, 100, "Shoes", displayData);
+    generateOutfit(randomOutfit.shirt.imagePath, 600, 300, "Shirt", displayData);
+    generateOutfit(randomOutfit.pants.imagePath, 600, 300, "Pants", displayData);
+    generateOutfit(randomOutfit.jacket.imagePath, 600, 300, "Jacket", displayData);
+    generateOutfit(randomOutfit.shoes.imagePath, 600, 300, "Shoes", displayData);
 }
 
 //This function randomly selects an index for each clothing category and gets it from the JSON template
@@ -171,6 +219,8 @@ function setBackgroundBasedOnWeather(weatherCondition) {
         'Clear': 'url("PUI-Images/sun.jpg")',
         'Clouds': 'url("PUI-Images/pexels-pixabay-531767.jpg")',
         'Rain': 'url("PUI-Images/1000_F_276388003_hdaYhobdFwLHbpL39Qfl8GLG6jXDQaby.jpg")',
+        'Mist': 'url("PUI-Images/timelapse-of-rainy-weather-in-mountains-misty-fog-blowing-over-pine-tree-forest-after-rain-outdoors-video.jpg")',
+        'Snow': 'url("PUI-Images/depositphotos_98723870-stock-photo-winter-background-with-snowy-weather.jpg")',
     };
 
     console.log("weather condition: ", weatherCondition);
@@ -189,5 +239,3 @@ searchButton.addEventListener("click", ()=> {
     checkWeather(searchBox.value);
 
 }) 
-
-//add more images and conditions 
