@@ -5,31 +5,31 @@ const products = {
         [
             {
                 "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.43.28 PM.png",
-                "imageTitle": "shirt-1"
+                "imageTitle": "Girl in white shirt"
             },
             {
                 "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.43.43 PM.png",
-                "imageTitle": "shirt-2"
+                "imageTitle": "Girl in black shirt"
             },
             {
                 "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.43.57 PM.png",
-                "imageTitle": "shirt-3"
+                "imageTitle": "Girl in green shirt"
             },
             {
                 "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.44.11 PM.png",
-                "imageTitle": "shirt-4"
+                "imageTitle": "Girl in beige shirt"
             },
             {
                 "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.55.41 PM.png",
-                "imageTitle": "shirt-5"
+                "imageTitle": "Girl in red shirt"
             },
             {
                 "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.54.32 PM.png",
-                "imageTitle": "shirt-6"
+                "imageTitle": "Girl in black long sleeve"
             },
             {
                 "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.53.42 PM.png",
-                "imageTitle": "shirt-7"
+                "imageTitle": "Girl in white cropped shirt"
             }
         ],
 
@@ -37,31 +37,31 @@ const products = {
             
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.45.43 PM.png",
-                    "imageTitle": "pants-1"
+                    "imageTitle": "Girl in black pants"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.45.59 PM.png",
-                    "imageTitle": "pants-2"
+                    "imageTitle": "Girl in white pants"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.46.13 PM.png",
-                    "imageTitle": "pants-3"
+                    "imageTitle": "Girl in beige pants"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.46.25 PM.png",
-                    "imageTitle": "pants-4" 
+                    "imageTitle": "Girl in nude pants" 
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.57.51 PM.png",
-                    "imageTitle": "pants-5" 
+                    "imageTitle": "Girl in green pants" 
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.56.48 PM.png",
-                    "imageTitle": "pants-6" 
+                    "imageTitle": "Girl in grey pants" 
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.56.18 PM.png",
-                    "imageTitle": "pants-7" 
+                    "imageTitle": "Girl in black slacks" 
                 }
             
 
@@ -71,31 +71,31 @@ const products = {
             
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.00 PM.png",
-                    "imageTitle": "jacket-1"
+                    "imageTitle": "Girl in black blazer"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.14 PM.png",
-                    "imageTitle": "jacket-2"
+                    "imageTitle": "Girl in beige blazer"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.33 PM.png",
-                    "imageTitle": "jacket-3"
+                    "imageTitle": "Girl in grey blazer"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-11-27 at 5.52.50 PM.png",
-                    "imageTitle": "jacket-4" 
+                    "imageTitle": "Girl in black puffer" 
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.52.45 PM.png",
-                    "imageTitle": "jacket-5"
+                    "imageTitle": "Girl in grey jacket"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.52.10 PM.png",
-                    "imageTitle": "jacket-6"
+                    "imageTitle": "Girl in brown puffer"
                 },
                 {
                     "imagePath": "PUI-Images/Screenshot 2023-12-06 at 5.51.43 PM.png",
-                    "imageTitle": "jacket-7"
+                    "imageTitle": "Girl in green puffer"
                 }
                 
         ],
