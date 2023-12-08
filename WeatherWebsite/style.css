@@ -52,6 +52,7 @@ h1 {
     width: 90px;
     height: 25px;
     border-radius: 20px;
+    margin-left: 15px;
 }
 #border {
    margin-top: 5%;
@@ -150,10 +151,11 @@ label{
 #location {
     width: 230px;
     height: 25px;
-    float: left;
     position: relative;
-    left: 30%; 
+    left: 15%; 
     margin-top: 50px ;
+    display: inline-block; 
+    text-align: center;
 }
 #display-words{
     font-family: Karla;
